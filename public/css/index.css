@@ -1,0 +1,25 @@
+#container {
+    margin: 0 auto;
+    width: 960px;
+    font-size: 1.2em;
+}
+body {
+    font: .625em helvetica, arial, sans-serif;
+}
+
+#content h1 {
+    font-size: 6em;
+    text-align: center;
+    font-weight: normal;
+}
+#content h1 em {
+    font-style: normal;
+    font-weight: bold;
+}
+dl#horoscopo dt {
+  display: inline;
+    
+}
+dl#horoscopo dd {
+  display: inline;
+}

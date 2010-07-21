@@ -16,5 +16,6 @@ group :test do
   # bundler requires these gems while running tests
   gem "rspec"
   gem 'rspec-rails' # gem "faker"
-  gem 'webrat' 
+  gem 'webrat'
+  gem 'hpricot' 
 end

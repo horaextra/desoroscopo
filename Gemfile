@@ -6,6 +6,7 @@ gem 'mongoid'
 gem "bson"
 gem 'haml'
 gem 'bson_ext'
+gem 'rcov'
 
 group :development do
   # bundler requires these gems in development

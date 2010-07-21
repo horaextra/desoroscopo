@@ -1,0 +1,36 @@
+<!doctype html>
+%html
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %meta{ :name => "description", :content => "" }
+    %meta{ :name => "keywords", :content => "" }
+    %meta{ :content => "en-US", "http-equiv" => "content-Language" }
+    %link{ :href => "favicon.ico", :rel => "shortcut icon", :type => "image/x-icon" }
+    %title
+      Desoroscopo
+    %link{ :href => "/css/styles.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+  %body
+    #page
+      #header
+        #logo
+          %a{ :href => "/" }
+            Desoroscopo
+        #quote
+          %blockquote
+            %p
+              Desoroscopo
+      %hr
+      #content
+        = yield
+      %hr
+      #footer
+        %p
+          \&copy; 2010.
+          %a{ :href => "http://smallactsmanifesto.org", :rel => "license" }
+            Desoroscopo
+          , some rights reserved.
+          %a{ :href => "http://creativecommons.org/licenses/by-nc-sa/3.0/", :rel => "license" }
+            %img{ :src => "http://i.creativecommons.org/l/by-nc-sa/3.0/br/80x15.png", :alt => "Creative Commons License", :style => "border-width:0" }
+          |
+          %a{ :href => "/community-badges" }
+            Community badges

@@ -6,3 +6,4 @@ class ForecastsController < ApplicationController
   end
 
 end
+ 

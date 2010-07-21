@@ -6,8 +6,8 @@ describe ForecastsController do
 
     it "should work" do
       get :index
+      response.should be_success
     end
 
   end
-  
 end

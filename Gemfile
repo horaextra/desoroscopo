@@ -8,6 +8,7 @@ gem 'haml'
 gem 'bson_ext'
 gem 'rcov'
 gem 'arrayextension'
+gem 'rack-cache', :require => 'rack/cache'
 
 group :development do
   # bundler requires these gems in development

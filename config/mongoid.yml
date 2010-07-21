@@ -8,14 +8,14 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: quartieri_development
+  database: desoroscopo_development
 
 test:
   <<: *defaults
-  database: quartieri_test
+  database: desoroscopo_test
 cucumber:
     <<: *defaults
-    database: quartieri_cucumber
+    database: desoroscopo_cucumber
 
 # set these environment variables on your prod server
 production:
@@ -27,4 +27,4 @@ production:
   password: <%= ENV['MONGOID_PASSWORD'] %>
   database: <%= ENV['MONGOID_DATABASE'] %>
   <% end %> 
-  database: quartieri_production
+  database: desoroscopo_production

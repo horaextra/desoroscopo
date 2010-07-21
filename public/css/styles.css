@@ -51,19 +51,15 @@ a:hover {
 }
 
 blockquote {
-  margin: auto;
-  padding: 0;
-  width: 520px;
+  margin: 0 0 40px 0;
+  padding: 0 0 0 40px;
   background: transparent url(../images/quote-left.gif) no-repeat 0 0;
-  text-align: center;
-  color: #033649;
-  font-size: 2em;
-  font-style: italic;
 }
 
 blockquote p {
-	line-height: 2em;
-	background: transparent url(../images/quote-right.gif) no-repeat bottom right;
+	margin: 0;
+	padding: 0 20px 0 0;
+	background: transparent url(../images/quote-right.gif) no-repeat right bottom;
 }
 
 /*
@@ -105,6 +101,7 @@ dl#horoscopo dt {
 	color: #fff;
   text-shadow: none;
   padding: 10px;
+	clear: left;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;

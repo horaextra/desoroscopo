@@ -1,0 +1,27 @@
+SeleniumPoetry
+==============
+
+Selenium Poetry is a DSL created to separate the test intention from the HTML selectors. HTML selector are placed in separate YAML files, while the test uses identifiers (phrases) to refer to the selectors in the YAML files.
+
+Dependencies
+============
+
+* Selenium on Rails
+* Mocha (to run plugin tests)
+
+Tutorial
+========
+
+Read the tutorial in doc/tutorial/tutorial.text
+
+API
+===
+
+The API can be found in doc/api/index.html
+
+Release Notes
+=============
+
+Selenium Plugin hasn't been officially published yet. The plugin is working fine, but we're still working on the documentation. A tutorial has just  been published, and we're currently working to improve the API documentation. (23 May 2008)
+
+Copyright (c) 2008 Vinícius Manhães Teles and Marcos Tapajós, Improve It, released under the MIT license..

@@ -1,0 +1,10 @@
+
+
+Processing ForecastsController#index (for 0.0.0.0 at 2010-07-21 15:32:52) [GET]
+Rendering forecasts/index
+Completed in 2ms (View: 0 | 200 OK [http://test.host/forecasts]
+
+
+Processing ForecastsController#index (for 0.0.0.0 at 2010-07-21 15:32:55) [GET]
+Rendering forecasts/index
+Completed in 2ms (View: 1 | 200 OK [http://test.host/forecasts]

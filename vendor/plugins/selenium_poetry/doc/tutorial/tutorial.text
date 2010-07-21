@@ -1,0 +1,227 @@
+# Tutorial 
+
+## Introduction
+
+To understand the what Selenium Poetry is and what you can do with it, keep reading this tutorial. However, if you just want to take a look at the API, you'll find it at [doc/api/index.html][api].
+
+In this tutorial we will assume the development of a tiny application: **[The Postcard Galley][app]**. 
+
+There's this artist who designs very fancy postcards. He sells them using his [web site][app]. To see it load the following file in your web browser:
+
+	doc/tutorial/app/index.html
+
+Or look the image and code below:
+
+[![Postcard Gallery][selenium_image]][app]
+
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	  "http://www.w3.org/TR/html4/strict.dtd">
+	<html>
+	  <head>
+	    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	    <link rel="stylesheet" href="application.css" type="text/css" media="screen" charset="utf-8">
+	    <title>Postcard Gallery</title>
+	  </head>
+
+	  <body>
+	    <h1>Postcard Gallery</h1>
+
+	    <p>Drag the postcards you like to the area on the right. After that, click on Buy.</p>
+
+	    <div id="postcards">
+	      <ul>
+	        <li><img src="images/norway.jpg" alt="Norway" title="Norway"></li>
+	        <li><img src="images/littleboy.jpg" alt="Littleboy" title="Littleboy"></li>
+	        <li><img src="images/riodejaneiro.jpg" alt="Rio de Janeiro" title="Rio de Janeiro"></li>
+	        <li><img src="images/recife.jpg" alt="Recife" title="Recife"></li>
+	      </ul>
+	    </div>
+
+	    <div id="selection"></div>
+
+	    <a href="checkout.html">Buy</a>
+	  </body>
+	</html>
+	
+
+The application has only three pages. The postcards are located in the very homepage. A visitor interested in buying a few of them can drag them to the selection area on the right. Clicking on 'Buy' the visitor is presented with a form where he should provide contact info. Finally, after submitting the form, the visitor will see a thank-you-page.
+
+It isn't a completely automated sales process. But, it's enough for the purposes of this tutorial. Oh, it's not completely functional either, but you'll get the picture.
+
+## Tests
+
+There are two sets of tests for this application. One of them uses Selenium Poetry while the other uses just regular Selenium commands. Both sets test the same aspects of the application, but you'll see that there's a dramatic improvement in test readability when Selenium Poetry is used, compared with the regular Selenium version.
+
+The tests are located in the directories:
+
+    doc/tutorial/test/selenium_poetry
+    doc/tutorial/test/selenium_regular
+
+### Testing the homepage
+
+Let's begin with the tests for the homepage. Look at the file:
+
+	doc/tutorial/test/selenium_poetry/index.rsel
+	
+Or look the code below:
+
+	load_selectors        :index
+
+	should_have_text      "page heading", "Postcard Gallery"
+
+	should_have           "postcard of rio de janeiro",
+	                      "postcard of recife",
+	                      "postcard of norway",
+	                      "postcard of littleboy",
+	                      "selection area",
+	                      "postcards area",
+	                      "buy button"
+
+	should_equal          "number of postcards" => 4
+
+	should_be             "empty selection area"  
+
+	should_drag_and_drop  "postcard of rio de janeiro", "selection area"
+
+	should_wait_for_equal "number of postcards" => 3,
+	                      "number of postcards selected" => 1
+
+	should_not_be         "empty selection area"
+
+	should_store          "number of postcards" => "numberOfPostarcdsAvaliable"
+
+	should_drag_and_drop  "postcard of recife", "selection area"
+
+	should_be             "less postcards after drag"
+
+	click_on_and_wait     "buy button"
+	
+
+Take a moment and try to read it all. As you go, try to figure out what the purpose of the test is. 
+
+Are you done? Then, let's move on. Open the file: 
+	
+	doc/tutorial/test/selenium_regular/index.rsel
+
+Or look the code below:
+
+	assert_text            "//h1", "Postcard Gallery"
+
+	assert_element_present '//ul/li/img[@src="images/riodejaneiro.jpg" and @alt="Rio de Janeiro" and @title="Rio de Janeiro"]'
+	assert_element_present '//ul/li/img[@src="images/recife.jpg" and @alt="Recife" and @title="Recife"]'
+	assert_element_present '//ul/li/img[@src="images/norway.jpg" and @alt="Norway" and @title="Norway"]'
+	assert_element_present '//ul/li/img[@src="images/littleboy.jpg" and @alt="Littleboy" and @title="Littleboy"]'
+	assert_element_present '//div[@id="selection"]'
+	assert_element_present '//div[@id="postcards"]'
+	assert_element_present 'buy button'
+
+	assert_eval             "this.page().findElement('postcards').select('img').length;", 4
+	assert_eval             "this.page().findElement('selection').select('img').length == 0;", true                 
+
+	drag_and_drop_to_object '//ul/li/img[@src="images/riodejaneiro.jpg" and @alt="Rio de Janeiro" and @title="Rio de Janeiro"]', '//div[@id="selection"]'
+
+	wait_for_eval           'this.page().findElement('postcards').select('img').length;', 3
+	wait_for_eval           'this.page().findElement('selection').select('img').length;', 1 
+
+	assert_eval             "this.page().findElement('selection').select('img').length == 0;", false
+
+	store_eval              "this.page().findElement('postcards').select('img').length;", "numberOfPostarcdsAvaliable"
+
+	drag_and_drop_to_object '//ul/li/img[@src="images/recife.jpg" and @alt="Recife" and @title="Recife"]', '//div[@id="selection"]'
+
+	assertEval              "this.page().findElement('selection').select('img').length < numberOfPostarcdsAvaliable;", true
+
+	click_and_wait          '//a[@href="checkout.html" and text()="Buy"]'
+
+This tests the very same things as the previous one. But, boy, what a difference! Isn't that much more confusing and polluted?
+
+The source of the problem is the use of XPath selectors in the same file where we place the test actions. To understand that, let's forget about Selenium mechanics for a moment. Say we're just writing a test script on a piece of paper. We'd probably write things like these:
+
+* Check if there's a heading with the content: Postcard Gallery
+* Check if there's a postcard of Rio de Janeiro
+* Check if there's a postcard of Recife
+* Check if there are four postcards
+
+This is straightforward and easy to communicate to anyone else, except the computer. It demands more precision from ourselves. It wants to know what part of the HTML are we referring to. That's why we must use XPath selectors, or any kind of selector that Selenium would allow.
+
+We solved this problem separating concerns. We decided to place test purposes in one place and selectors in another. Take a look at the file:
+
+    doc/tutorial/test/selenium_poetry/selectors/index.yml
+
+Or look the code below:
+
+	page heading:
+	    //h1
+
+	postcard of rio de janeiro:
+	    //ul/li/img[@src="images/riodejaneiro.jpg" and @alt="Rio de Janeiro" and @title="Rio de Janeiro"]
+
+	postcard of recife:
+	    //ul/li/img[@src="images/recife.jpg" and @alt="Recife" and @title="Recife"]
+
+	postcard of norway:
+	    //ul/li/img[@src="images/norway.jpg" and @alt="Norway" and @title="Norway"]
+
+	postcard of littleboy:
+	    //ul/li/img[@src="images/littleboy.jpg" and @alt="Littleboy" and @title="Littleboy"]
+
+	selection area:
+	    //div[@id="selection"]
+
+	postcards area:
+	    //div[@id="postcards"]
+
+	buy button:
+	    //a[@href="checkout.html" and text()="Buy"]
+
+	number of postcards:    
+	    this.page().findElement('postcards').select('img').length;
+
+	number of postcards selected:    
+	    this.page().findElement('selection').select('img').length;
+
+	empty selection area:
+	    this.page().findElement('selection').select('img').length == 0;
+
+	less postcards after drag:
+	    this.page().findElement('selection').select('img').length < numberOfPostarcdsAvaliable;
+    
+This file contains only selectors. Actually that's not completely true. There are selectors and keys. It's like a Ruby Hash. There's a *key* and *value*. In this case, the *key* is a phrase that describes the selector, while the *value* is the selector itself. Let's see an example. In the selector's file, you might find something like this:
+
+    postcard of rio de janeiro:
+        //ul/li/img[@src="images/riodejaneiro.jpg" and @alt="Rio de Janeiro" and @title="Rio de Janeiro"]
+
+When Selenium Poetry loads this file, it creates a Ruby Hash like the one below:
+
+    { 'postcard of rio de janeiro' => '//ul/li/img[@src="images/riodejaneiro.jpg" and @alt="Rio de Janeiro" and @title="Rio de Janeiro"]' }
+
+From then on, you don't need to think about the HTML selector anymore. You just use the keys ('postcard of rio de janeiro', in the last case). 
+
+This separation of concerns not only helps you to write more readable tests, but also creates opportunities for reuse. You can use the same key in several test cases. If the corresponding selector changes, you just have to change in one place, so it's also much DRYer.
+
+In order to use the keys in your Selenium tests, all you have to do is to load them in the beginning of the test. That's how you do it:
+
+    load_selectors        :index
+    
+This will load the keys in the file **index.yml**, which must be placed in the directory **test/selectors** of your Rails application. If you need to load keys from several selector files, you just do like this:
+
+    load_selectors        :checkout, :finish
+    
+The keys placed in the files **checkout.yml** and **finish.yml** will be loaded. You can spread your keys in as many files as you want.
+
+
+----
+Authors: [Vinícius Teles][vinicius] and [Marcos Tapajós][tapa]
+
+Pictures from Flickr (Creative Commons):  
+Norway - Ken Douglas  
+Rio de Janeiro - Daniël Silveira   
+Recife - Antonio Serra  
+LittleBoy - Marcus Correa
+  
+
+[selenium_image]: selenium.gif "Postcard Gallery"
+[app]: app/index.html
+[api]: ../api/index.html
+[vinicius]: http://www.improveit.com.br/vinicius
+[tapa]: http://www.improveit.com.br/tapajos

@@ -6,6 +6,7 @@ gem 'mongoid'
 gem "bson"
 gem 'haml'
 gem 'bson_ext'
+gem 'rcov'
 
 group :development do
   # bundler requires these gems in development
@@ -15,5 +16,7 @@ end
 group :test do
   # bundler requires these gems while running tests
   gem "rspec"
-  # gem "faker"
+  gem 'rspec-rails' # gem "faker"
+  gem 'webrat'
+  gem 'hpricot' 
 end

@@ -1,0 +1,28 @@
+assert_text            "//h1", "Postcard Gallery"
+
+assert_element_present '//ul/li/img[@src="images/riodejaneiro.jpg" and @alt="Rio de Janeiro" and @title="Rio de Janeiro"]'
+assert_element_present '//ul/li/img[@src="images/recife.jpg" and @alt="Recife" and @title="Recife"]'
+assert_element_present '//ul/li/img[@src="images/norway.jpg" and @alt="Norway" and @title="Norway"]'
+assert_element_present '//ul/li/img[@src="images/littleboy.jpg" and @alt="Littleboy" and @title="Littleboy"]'
+assert_element_present '//div[@id="selection"]'
+assert_element_present '//div[@id="postcards"]'
+assert_element_present 'buy button'
+
+assert_eval             "this.page().findElement('postcards').select('img').length;", 4
+assert_eval             "this.page().findElement('selection').select('img').length == 0;", true                 
+
+drag_and_drop_to_object '//ul/li/img[@src="images/riodejaneiro.jpg" and @alt="Rio de Janeiro" and @title="Rio de Janeiro"]', '//div[@id="selection"]'
+                 
+wait_for_eval           'this.page().findElement('postcards').select('img').length;', 3
+wait_for_eval           'this.page().findElement('selection').select('img').length;', 1 
+
+assert_eval             "this.page().findElement('selection').select('img').length == 0;", false
+
+store_eval              "this.page().findElement('postcards').select('img').length;", "numberOfPostarcdsAvaliable"
+
+drag_and_drop_to_object '//ul/li/img[@src="images/recife.jpg" and @alt="Recife" and @title="Recife"]', '//div[@id="selection"]'
+
+assertEval              "this.page().findElement('selection').select('img').length < numberOfPostarcdsAvaliable;", true
+
+click_and_wait          '//a[@href="checkout.html" and text()="Buy"]'
+

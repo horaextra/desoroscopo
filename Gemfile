@@ -5,6 +5,7 @@ gem 'carrierwave'
 gem 'mongoid'
 gem "bson"
 gem 'haml'
+gem 'bson_ext'
 
 group :development do
   # bundler requires these gems in development

@@ -58,7 +58,7 @@ blockquote {
 
 blockquote p {
 	margin: 0;
-	padding: 0 20px 0 0;
+	padding: 0 25px 0 0;
 	background: transparent url(../images/quote-right.gif) no-repeat right bottom;
 }
 
@@ -74,7 +74,8 @@ Header
 	font-size: 6em;
 	text-align: center;
 	font-weight: normal;
-	letter-spacing: -0.05em;	
+	letter-spacing: -0.05em;
+	margin: .4em;	
 }
 #header h1 a {
 	border: none;
@@ -96,11 +97,13 @@ Content
 
 dl#horoscopo dt {
 	font-size: 1.4em;
+	width: 140px;
 	float: left;
   background-color: #4DBCE9;
 	color: #fff;
   text-shadow: none;
-  padding: 10px;
+  margin: 0 20px 0 0;
+	padding: 10px;
 	clear: left;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -111,7 +114,7 @@ dl#horoscopo dt {
 dl#horoscopo dd {
   display: inline;
 	float: left;
-	width: 600px;
+	width: 680px;
 }
 
 /*

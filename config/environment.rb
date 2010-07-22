@@ -43,3 +43,5 @@ Rails::Initializer.run do |config|
   require 'rack/cache'
   config.middleware.use(Rack::Cache, :verbose => true)
 end
+
+srand

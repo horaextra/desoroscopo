@@ -6,7 +6,6 @@ class ForecastsController < ApplicationController
     
     # o array.draw(12) não funfa... tem repetição... código tosco:
     # http://github.com/tomas-stefano/arrayextension/blob/master/lib/arrayextension.rb       
-
     all_phrases = Phrase.all
     @phrases = []
     @zoodiacs.size.times do
@@ -15,4 +14,3 @@ class ForecastsController < ApplicationController
   end
 
 end
- 

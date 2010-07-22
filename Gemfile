@@ -1,11 +1,7 @@
 source :gemcutter
 gem "rails", "2.3.8"
 
-gem 'carrierwave'
-gem 'mongoid'
-gem "bson"
 gem 'haml'
-gem 'bson_ext'
 gem 'rcov'
 gem 'arrayextension'
 gem 'rack-cache', :require => 'rack/cache'

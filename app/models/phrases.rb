@@ -6,7 +6,7 @@ class Phrases < Array
   end
   
   def select
-    result = candidates.draw
+    result = candidates.draw.first
     @drawn << result
     result
   end

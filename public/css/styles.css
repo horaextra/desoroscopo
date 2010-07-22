@@ -51,7 +51,7 @@ a:hover {
 }
 
 blockquote {
-  margin: 0 0 40px 0;
+  margin: 0 0 25px 0;
   padding: 0 0 0 40px;
   background: transparent url(../images/quote-left.gif) no-repeat 0 0;
 }
@@ -115,6 +115,8 @@ dl#horoscopo dd {
   display: inline;
 	float: left;
 	width: 680px;
+	border-bottom: 1px dotted #e9e9e9;
+	margin: 0 0 15px 0;
 }
 
 /*

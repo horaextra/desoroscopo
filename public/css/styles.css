@@ -119,6 +119,10 @@ dl#horoscopo dd {
 	margin: 0 0 15px 0;
 }
 
+a.tweet-link {
+  border: none;
+}
+
 /*
 Forms
 */

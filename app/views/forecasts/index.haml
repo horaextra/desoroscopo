@@ -1,9 +1,0 @@
-%dl#horoscopo.clearfix
-  - @zoodiacs.each do |zoodiac|
-    %dt= zoodiac
-    %dd
-      %blockquote
-        %p
-          = phrase = @phrases.select
-          - tweet_phrase = prepare_phrase_to_twitter(["#desoroscopo", "##{zoodiac}", phrase].join(" "))
-          = link_to image_tag('tweet_icon.png', :alt => 'tuitar'), "http://twitter.com/?status=#{CGI.escape(tweet_phrase)}", :class => 'tweet-link'

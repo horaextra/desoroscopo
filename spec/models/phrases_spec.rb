@@ -1,4 +1,4 @@
-require 'spec_helper'
+require File.expand_path(File.dirname(__FILE__) + "/../spec_helper")
 
 describe Phrases do
   
@@ -9,7 +9,7 @@ describe Phrases do
   describe ".initialize" do
 
     it "should load phrases" do
-      YAML.should_receive(:load_file).with("db/phrases.yml").and_return(['phrase'])
+      YAML.should_receive(:load_file).with("./models/../db/phrases.yml").and_return(['phrase'])
       phrases = Phrases.new
       phrases.should == ['phrase']
       phrases.instance_variable_get(:@drawn).should == []
@@ -20,7 +20,7 @@ describe Phrases do
   describe ".candidates" do
 
     it "should return all the phrases except the ones that have been drawn already" do
-      YAML.should_receive(:load_file).with("db/phrases.yml").and_return(['phrase', 'another phrase'])
+      YAML.should_receive(:load_file).with("./models/../db/phrases.yml").and_return(['phrase', 'another phrase'])
       phrases = Phrases.new
       phrases.instance_variable_set(:@drawn, ['phrase'])
       phrases.candidates.should == ['another phrase']
@@ -31,7 +31,7 @@ describe Phrases do
   describe ".select" do
     
     before do 
-      YAML.stub!(:load_file).with("db/phrases.yml").and_return([1, 2, 3, 4, 5, 6])
+      YAML.stub!(:load_file).with("./models/../db/phrases.yml").and_return([1, 2, 3, 4, 5, 6])
     end 
 
     it "should draw from candidates" do    

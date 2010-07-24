@@ -226,3 +226,13 @@ Clearfix
 	display: block;
 }
 /* End hide from IE-mac */
+
+#he {
+  float: right;
+  margin: 10px 10px 0 0;
+  background: url(/images/he.png) no-repeat;
+  width: 72px;
+  height: 27px;
+  display: block;
+  text-indent: -153000px;
+}

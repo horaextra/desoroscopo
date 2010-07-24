@@ -1,3 +1,4 @@
+- require 'cgi'
 <!doctype html>
 %html
   %head
@@ -31,7 +32,7 @@
                 %p
                   = phrase = @phrases.select
                   - tweet_phrase = "#desoroscopo  ##{zoodiac} #{phrase}"
-                  %a{:href => "http://twitter.com/?status=#{tweet_phrase}", :class => 'tweet-link'}
+                  %a{:href => "http://twitter.com/?status=#{CGI.escape(tweet_phrase)}", :class => 'tweet-link'}
                     %img{:src => '/images/tweet_icon.png', :alt => 'tuitar'}
       %hr
       #footer

@@ -56,7 +56,7 @@ Faça um fork e participe destes projetos. Afinal de contas, "[small acts make g
 [mt]: http://tapajos.me/
 [rt]: http://github.com/tauil
 [vt]: http://improveit.com.br/empresa/vinicius
-[fa]: http://sites.google.com/site/flavioamieiro/
+[fa]: http://flavioamieiro.com/
 [bf]: http://www.bernardofontes.net
 [mm]: http://mariomariani.blogspot.com/
 [vp]: http://vp.blog.br/

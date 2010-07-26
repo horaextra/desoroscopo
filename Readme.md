@@ -52,7 +52,7 @@ Mas como o grupo [#horaextra][he] é sinistro colocamos mais do que uma por dia.
 [mt]: http://tapajos.me/
 [rt]: http://github.com/tauil
 [vt]: http://improveit.com.br/empresa/vinicius
-[fa]: http://sites.google.com/site/flavioamieiro/
+[fa]: http://flavioamieiro.com/
 [bf]: http://www.bernardofontes.net
 [mm]: http://mariomariani.blogspot.com/
 [vp]: http://vp.blog.br/

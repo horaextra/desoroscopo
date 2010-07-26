@@ -18,22 +18,22 @@ Mas como o grupo [#horaextra][he] é sinistro colocamos mais do que uma por dia.
 
 ## O time #HoraExtra
 
-* [Flávio Amieiro][fa] - [github][gfa]
-* [Bernardo Fontes][bf] - [github][gbf]
-* [Mario Mariani][mm] - [github][gmm]
-* [Vitor Pellegrino][vp] - [github][gvp]
+* [Álvaro Justen][aj] - [github][gaj]
 * [André Fonseca][af] - [github][gaf]
-* [Vinícius Teles][vt] - [github][gvt]
+* [Bernardo Fontes][bf] - [github][gbf]
+* [Diego Dukão][dk] - [github][gdk]
+* [Flávio Amieiro][fa] - [github][gfa]
+* [Henrique Bastos][hb] - [github][ghb]
+* [Israel Texeira][it] - [github][git]
 * [Marcos Tapajos][mt] - [github][gmt]
-* [Rodrigo Kumpera][rk] - [github][grk]
+* [Mario Mariani][mm] - [github][gmm]
 * [Rafael Tauil][rt] - [github][grt]
 * [Ramon Page][rp] - [github][grp]
+* [Rodrigo Kumpera][rk] - [github][grk]
 * [Rodrigo Pinto][rdp] - [github][grdp]
-* [Henrique Bastos][hb] - [github][ghb]
-* [Diego Dukão][dk] - [github][gdk]
-* [Israel Texeira][it] - [github][git]
 * [Thiago Freire][tf] - [github][gtf]
-* [Álvaro Justen][aj] - [github][gaj]
+* [Vinícius Teles][vt] - [github][gvt]
+* [Vitor Pellegrino][vp] - [github][gvp]
 
 ## Os colaboradores externos
 

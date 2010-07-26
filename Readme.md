@@ -26,7 +26,7 @@ Mas como o grupo [#horaextra][he] é sinistro colocamos mais do que uma por dia.
 * Vinícius Teles
 * [Marcos Tapajos][mt]
 * Rodrigo Kumpera
-* [Rafael Tauil][tauil]
+* [Rafael Tauil][rt]
 * Ramon Page
 * Rodrigo Pinto
 * Henrique Bastos
@@ -49,7 +49,7 @@ Mas como o grupo [#horaextra][he] é sinistro colocamos mais do que uma por dia.
 [do]:http://github.com/horaextra/desoroscopo
 [ba]:http://github.com/horaextra/banheiro
 [mt]:http://github.com/tapajos
-[tauil]:http://github.com/tauil
+[rt]:http://github.com/tauil
 
 
 

@@ -23,4 +23,5 @@ gems
 .vagrant
 capybara*.html
 tmp/restart.txt
+*~
 

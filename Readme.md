@@ -26,7 +26,7 @@ Mas como o grupo [#horaextra][he] é sinistro colocamos mais do que uma por dia.
 * Vinícius Teles
 * [Marcos Tapajos][mt]
 * Rodrigo Kumpera
-* Rafael Tauil
+* [Rafael Tauil][mt]
 * Ramon Page
 * Rodrigo Pinto
 * Henrique Bastos

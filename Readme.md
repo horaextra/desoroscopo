@@ -54,7 +54,7 @@ Faça um fork e participe destes projetos. Afinal de contas, "[small acts make g
 [do]: http://github.com/horaextra/desoroscopo
 [ba]: http://github.com/horaextra/banheiro
 [mt]: http://tapajos.me/
-[rt]: http://github.com/tauil
+[rt]: http://rafael.tauil.com.br/?utm_campaign=github
 [vt]: http://improveit.com.br/empresa/vinicius
 [fa]: http://flavioamieiro.com/
 [bf]: http://www.bernardofontes.net

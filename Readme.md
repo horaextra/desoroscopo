@@ -65,7 +65,7 @@ Faça um fork e participe destes projetos. Afinal de contas, "[small acts make g
 [rp]: http://ramonpage.com/
 [hb]: http://henriquebastos.net/
 [rdp]: http://rodrigopinto.me/
-[dk]: http://diegodukao.net/?utm_source=github.com/horaextra&utm_medium=affiliate&utm_content=textlink&utm_campaign=github_horaextra
+[dk]: http://diegodukao.net/?utm_campaign=github_he
 [it]: http://mudadeideia.com.br/
 [tf]: http://freireag.com
 [ry]: http://blog.aspercom.com.br/

@@ -40,6 +40,10 @@ Mas como o grupo [#horaextra][he] é sinistro colocamos mais do que uma por dia.
 * [Celestino Gomes][cg] - [github][gcg]
 * [Rodrigo Yoshima][ry] - [github][gry]
 
+Faça um fork e participe destes projetos. Afinal de contas, "[small acts make great revolutions][sma]".
+
+[sma]: http://smallactsmanifesto.org/
+
 [fisl]: http://fisl.softwarelivre.org
 [he]: http://horaextra.org/
 [a]: http://akitaonrails.com/2010/07/25/galera-do-horaextra-manda-ver-no-fisl

@@ -9,8 +9,8 @@ require 'haml'
 require 'rcov'
 require 'arrayextension'
 require 'sinatra'
-require 'models/phrases'
-require 'models/zoodiac'
+require File.join(File.dirname(__FILE__), 'models', 'phrases')
+require File.join(File.dirname(__FILE__), 'models', 'zoodiac')
 
 configure :production do
 end
@@ -20,3 +20,4 @@ get '/' do
   @phrases = Phrases.new
   haml :index
 end
+
